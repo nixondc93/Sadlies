@@ -11,15 +11,28 @@ function SadliesController($http, $scope) {
   // $http({
   //   method: 'GET',
   //   url: '' // twitter ajax call
-  // }).then(successClbk, errorClbk)
+  // }).then(twiiterApiClbk, errorClbk)
   //
-  // function successClbk(response) {
+  // function twiiterApiClbk(response) {
   //   this.sadlies = response.data
   //   console.log(this.sadlies);
   // }
   //
   // function errorClbk(err) {
   //   console.log('There was an error retrieving your tweets ', err);
+  // };
+
+    // $http({
+  //   method: 'POST',
+  //   url: '/sadlies'
+  // }).then(sadliesClbk, errorClbk)
+  //
+  // function sadliesClbk(response) {
+
+  // }
+  //
+  // function errorClbk(err) {
+  //   console.log('There was an error psoting to /sadlies', err);
   // };
 
 }; // controller end.
