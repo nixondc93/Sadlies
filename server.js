@@ -17,6 +17,9 @@ app.get('/', function homepage (req, response) {
  response.sendFile( __dirname + '/views/index.html');
 });
 
+// app.get('/api/sadlies', controllers.sadlies.index);
+// app.get('/sadlies', controllers.sadlies.create);
+
 /* SERVER */
 app.listen(process.env.PORT || 3000, function() {
   console.log('Express server is running on port:3000');
