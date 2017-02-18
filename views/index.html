@@ -17,6 +17,9 @@
       <div ng-controller="SadliesController as sadliesCrtl">
         <div class="container">
           <h2>Sadlies</h2>
+            <div ng-repeat="lies in SadliesCrtl.sadlies">
+              <div ng-if="lies < 5"></div>
+            </div>
         </div>
      </div>
   </body>
