@@ -19,6 +19,6 @@ app.get('/', function homepage (req, response) {
 
 /* SERVER */
 app.listen(process.env.PORT || 3000, function() {
-  console.log('Express server is running on -> port:3000');
+  console.log('Express server is running on port:3000');
   console.log('Press CTRL-C to stop\n');
 });
