@@ -9,6 +9,5 @@ let TweetSchema = new Schema ({
   favorite_count: Number,
 })
 
-
 let Tweet = mongoose.model('Tweet', TweetSchema);
 module.exports = Tweet;

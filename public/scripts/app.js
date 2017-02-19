@@ -1,4 +1,4 @@
-console.log('Sanity Check - You should see vm!!!');
+console.log('Sanity Check - You should see this!!!');
 
 angular
   .module('sadlies', [])
@@ -7,11 +7,9 @@ angular
 function SadliesController($http, $scope) {
   console.log('Hello from SadliesController');
   this.sadlies = []
-  let vm = this;
-  vm.tweets = {
+  this.tweets = {
     tweets: "Hi Derry, I thought you were cool?..."
   }
-  console.log(vm.tweets);
 
   $http({
     method: 'GET',
@@ -19,8 +17,7 @@ function SadliesController($http, $scope) {
   }).then(twiiterApiClbk, errorClbk)
 
   function twiiterApiClbk(response) {
-    vm.tweets = response
-    console.log(vm.tweets);
+  
   }
 
   function errorClbk(err) {
@@ -30,7 +27,7 @@ function SadliesController($http, $scope) {
   $http({
     method: 'POST',
     url: '/api/sadlies',
-    data: vm.tweets
+    data: this.tweets
   }).then(sadliesClbk, errorClbk)
 
   function sadliesClbk(response) {
@@ -41,4 +38,5 @@ function SadliesController($http, $scope) {
     console.log('There was an error posting to /sadlies', err);
   };
 
-}; // controller end.
+};
+// controller end.
