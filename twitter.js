@@ -1,4 +1,6 @@
 const Twit = require('twit');
+const Fs = require('file-system');
+const Tweets = require('./trumpTweets');
 
 const T = new Twit({
   consumer_key:         'N1bCISbBQDYHfohkAfNBKqStY',
@@ -10,13 +12,14 @@ const T = new Twit({
 });
 
 // setInterval(()=>{
-  T.get('statuses/user_timeline', { screen_name: 'realDonaldTrump', count: 199}, function(err, data, response) {
+  T.get('statuses/user_timeline', { screen_name: 'realDonaldTrump', count: 200}, function(err, data, response) {
   if(err){
     console.log("Error fectching tweets");
   }
 
   console.log(data);
-
   console.log("Number of tweets: ",data.length)
+  let json = JSON.stringify(data);
+  Fs.writeFile('./trumpTweets.js', json, 'utf8');
 });
-// }, 1000*60*2)
+// }, 1000)
