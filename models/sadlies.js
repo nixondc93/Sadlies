@@ -3,7 +3,10 @@ let Schema = mongoose.Schema;
 
 
 let TweetSchema = new Schema ({
-  tweets: String
+  source: String,
+  text: String,
+  retweet_count: Number,
+  favorite_count: Number,
 })
 
 let Tweet = mongoose.model('Tweet', TweetSchema);
