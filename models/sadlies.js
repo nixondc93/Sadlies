@@ -6,6 +6,5 @@ let TweetSchema = new Schema ({
   tweets: String
 })
 
-
 let Tweet = mongoose.model('Tweet', TweetSchema);
 module.exports = Tweet;

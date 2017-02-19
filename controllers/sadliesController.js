@@ -9,7 +9,6 @@ function index(req, response){
 }
 
 function create(req, response){
-  console.log(req);
   db.Tweet.create(req.body, function(err, tweet){
     if(err) { console.log('There was an error creating tweet.', err); }
       response.json(tweet)
@@ -17,7 +16,16 @@ function create(req, response){
   })
 }
 
+function destroy(req, response) {
+  db.Tweet.remove(function(err, destroyedTweet){
+    if(err) { console.log('there was an errror destroying tweets.', err); }
+      console.log('You have destroyed all tweets.');
+      return response.json(destroyedTweet)
+  })
+}
+
 module.exports = {
   index: index,
-  create: create
+  create: create,
+  destroy: destroy,
 }
