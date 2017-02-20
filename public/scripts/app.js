@@ -1,5 +1,6 @@
 console.log('Sanity Check - You should see this!!!');
 
+
 angular
   .module('sadlies', [])
   .controller('SadliesController', SadliesController);
@@ -17,7 +18,7 @@ function SadliesController($http, $scope) {
   }).then(twiiterApiClbk, errorClbk)
 
   function twiiterApiClbk(response) {
-  
+
   }
 
   function errorClbk(err) {
