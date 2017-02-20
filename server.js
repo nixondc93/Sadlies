@@ -4,8 +4,7 @@ let db = require('./models');
 let controllers = require('./controllers');
 let bodyParser = require('body-parser');
 
-// let tweets = require('.twitter');
-
+let tweets = require('./twitter');
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));

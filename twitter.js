@@ -13,13 +13,11 @@ const T = new Twit({
 
 // setInterval(()=>{
   T.get('statuses/user_timeline', { screen_name: 'realDonaldTrump', count: 200}, function(err, data, response) {
-  if(err){
-    console.log("Error fectching tweets");
-  }
+  if(err){ console.log("Error fectching tweets");}
 
-  console.log(data);
-  console.log("Number of tweets: ",data.length)
-  let json = JSON.stringify(data);
-  Fs.writeFile('./trumpTweets.js', json, 'utf8');
+  data.forEach(function(el,index,tweets){
+      let justTweets = tweets[index].text
+      return console.log(justTweets;
+  })
 });
 // }, 1000)
