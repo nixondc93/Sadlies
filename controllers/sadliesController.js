@@ -19,8 +19,8 @@ function create(req, response){
 function destroy(req, response) {
   db.Tweet.remove(function(err, destroyedTweet){
     if(err) { console.log('there was an errror destroying tweets.', err); }
-      console.log('You have destroyed all tweets.');
-      return response.json(destroyedTweet)
+      response.json(destroyedTweet)
+      return console.log('You have destroyed all tweets.');
   })
 }
 
