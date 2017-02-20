@@ -13,6 +13,7 @@ const T = new Twit({
   // timeout_ms:           5*60*1000,
 });
 
+<<<<<<< HEAD
 let tweets; 
 while (tweets[0].id !== undefined) {
   setInterval(() => {
@@ -52,3 +53,14 @@ while (tweets[0].id !== undefined) {
   //     json = JSON.stringify(obj); //convert it back to json
   //     fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back 
   // }});
+=======
+// setInterval(()=>{
+  T.get('statuses/user_timeline', { screen_name: 'realDonaldTrump', count: 200}, function(err, data, response) {
+  if(err){ console.log("Error fectching tweets");}
+
+  data.forEach(function(el,index,tweets){
+    return console.log(tweets);
+  })
+});
+// }, 1000)
+>>>>>>> 394b1f74385ab85a27e0ff5372550b6f9ef09eff

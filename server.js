@@ -6,6 +6,7 @@ const db = require('./models');
 const controllers = require('./controllers');
 const bodyParser = require('body-parser');
 
+
 /* SERVING STATIC FILES */
 app.use(express.static('public'));
 app.use(express.static('views'));
