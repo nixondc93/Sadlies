@@ -1,6 +1,6 @@
 const db = require('./models');
 
-// tweets = [{}]
+// tweets = []
 
 db.Tweet.remove({}, function(err, response) {
   db.Tweet.create(tweets, function(err, SuccessClbk ) {

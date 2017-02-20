@@ -16,8 +16,7 @@ const T = new Twit({
   if(err){ console.log("Error fectching tweets");}
 
   data.forEach(function(el,index,tweets){
-      let justTweets = tweets[index].text
-      return console.log(justTweets;
+    return console.log(tweets);
   })
 });
 // }, 1000)
