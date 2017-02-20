@@ -13,8 +13,8 @@ const T = new Twit({
   // timeout_ms:           5*60*1000,
 });
 
-<<<<<<< HEAD
-let tweets; 
+
+let tweets;
 while (tweets[0].id !== undefined) {
   setInterval(() => {
     T.get('statuses/user_timeline', {
@@ -22,7 +22,7 @@ while (tweets[0].id !== undefined) {
       count: 200,
       max_id: data[199].id
     }, function (err, data, response) {
-      tweets = data; 
+      tweets = data;
       if (err) {
         console.log("Error fectching tweets");
       }
@@ -31,36 +31,14 @@ while (tweets[0].id !== undefined) {
 
   Fs.readFile('./trumpTweets.js', 'utf8', function readFileCallback(err, data){
       if (err){
-          console.log(err);
+        console.log(err);
       } else {
       obj = JSON.parse(data); //now it an object
       obj.push(tweets); //add some data
       json = JSON.stringify(obj); //convert it back to json
-      Fs.writeFile('/trumpTweets.js', json, 'utf8'); // write it back 
+      Fs.writeFile('/trumpTweets.js', json, 'utf8'); // write it back
   }});
       // Fs.writeFile('./trumpTweets.js', json, 'utf8');
     });
   }, 1000)
 }
-
-
-  // fs.readFile('./trumpTweets.js', 'utf8', function readFileCallback(err, data){
-  //     if (err){
-  //         console.log(err);
-  //     } else {
-  //     obj = JSON.parse(data); //now it an object
-  //     obj.table.push({id: 2, square:3}); //add some data
-  //     json = JSON.stringify(obj); //convert it back to json
-  //     fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back 
-  // }});
-=======
-// setInterval(()=>{
-  T.get('statuses/user_timeline', { screen_name: 'realDonaldTrump', count: 200}, function(err, data, response) {
-  if(err){ console.log("Error fectching tweets");}
-
-  data.forEach(function(el,index,tweets){
-    return console.log(tweets);
-  })
-});
-// }, 1000)
->>>>>>> 394b1f74385ab85a27e0ff5372550b6f9ef09eff

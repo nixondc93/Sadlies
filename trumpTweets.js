@@ -1,5 +1,5 @@
 
-[{
+let tweets = [{
     "created_at": "Sat Feb 18 20:26:31 +0000 2017",
     "id": 833050081641234400,
     "id_str": "833050081641234435",
@@ -76,7 +76,7 @@
     "retweeted": false,
     "lang": "en"
 }, {
-    "created_at": "Sat Feb 18 13:51:20 +0000 2017",          
+    "created_at": "Sat Feb 18 13:51:20 +0000 2017",
     "id": 832950628750127100,
     "id_str": "832950628750127106",
     "text": "Will be having many meetings this weekend at The Southern White House. Big 5:00 P.M. speech in Melbourne, Florida. A lot to talk about!",
@@ -18170,3 +18170,5 @@
     "lang": "en"
 }]
 
+
+module.exports.tweets = tweets

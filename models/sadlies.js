@@ -9,7 +9,7 @@ let TweetSchema = new Schema ({
   source: String,
   location: String,
   created_at: String,
-  time_zone:: String,
+  time_zone: String,
   utc_offset: String,
   retweet_count: Number,
   favorite_count: Number,
