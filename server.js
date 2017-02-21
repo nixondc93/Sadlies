@@ -4,7 +4,29 @@ const db = require('./models');
 const controllers = require('./controllers');
 const bodyParser = require('body-parser');
 const postTweets = require('./postTweets.js');
-const watson = require('watson-developer-cloud');
+const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
+
+let personality_insights = new PersonalityInsightsV3({
+  username: 'caseyjoneal@gmail.com',
+  password: 'Ghouls123.',
+  version_date: '2016-10-20'
+});
+
+let params = {
+  content_items: "Derry might be cool?",
+  consumption_preferences: true,
+  raw_scores: true,
+  headers: {
+    'accept-language': 'en',
+    'accept': 'application/json'
+  }
+};
+
+personality_insights.profile(params, function(err, response) {
+  if(err){ console.log('Error:', err); }
+    console.log('Success! -> ', response);
+    return console.log(JSON.stringify(response));
+  });
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));
