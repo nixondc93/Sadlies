@@ -17,14 +17,14 @@ let tweets = [],
 
 const Interval = setInterval(() => {
 
-  let start = tweets.length === 0 ? 833050081641234400 : tweets[tweets.length - 1].id 
+  let start = tweets.length === 0 ? 833050081641234400 : tweets[tweets.length - 1].id
 
   T.get('statuses/user_timeline', {
     screen_name: 'realDonaldTrump',
     count: 200,
     max_id: start
   }, function (err, data, response) {
-    
+
     if (err) {
       console.log("Error fectching tweets");
     }
@@ -37,5 +37,5 @@ const Interval = setInterval(() => {
     tweets = tweets.concat(data);
     console.log("Number of tweets: ", tweetCount);
   });
-  
+
 }, 2000);
