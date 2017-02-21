@@ -35,5 +35,4 @@ const Interval = setInterval(() => {
     tweets = tweets.concat(data);
     console.log("Number of tweets: ", tweetCount);
   });
-  
 }, 2000);
