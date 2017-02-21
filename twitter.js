@@ -3,7 +3,6 @@ const Fs = require('file-system');
 const Tweets = require('./trumpTweets');
 
 
-
 const T = new Twit({
   consumer_key: 'N1bCISbBQDYHfohkAfNBKqStY',
   consumer_secret: 'tYuH96sqwHzYa4hSpRKf7WlVZDhW5b1vxFK800Bxw1rk9o9ty7',
@@ -12,7 +11,6 @@ const T = new Twit({
   // access_token_secret:  'hMIIGpgeiO3wjU9B4zry6YP1LpsvRv2m2usE6S93UCINo'
   // timeout_ms:           5*60*1000,
 });
-
 
 let tweets;
 while (tweets[0].id !== undefined) {

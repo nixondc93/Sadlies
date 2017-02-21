@@ -3,6 +3,7 @@ const app = express();
 const db = require('./models');
 const controllers = require('./controllers');
 const bodyParser = require('body-parser');
+const postTweets = require('./postTweets.js');
 
 
 /* SERVING STATIC FILES */
