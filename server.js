@@ -6,10 +6,12 @@ const bodyParser = require('body-parser');
 const postTweets = require('./postTweets.js');
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
+/* WATSON API */
 let personality_insights = new PersonalityInsightsV3({
-  username: 'caseyjoneal@gmail.com',
-  password: 'Ghouls123.',
-  version_date: '2016-10-20'
+  "url": 'https://gateway.watsonplatform.net/personality-insights/api',
+  "username": '6cf44ed0-b68d-4867-9def-84b2cf03b2c4',
+  "password": 'kHgqTmBVxmRG',
+  "version_date": '2016-10-19'
 });
 
 let params = {
