@@ -4,7 +4,7 @@ const db = require('./models');
 const controllers = require('./controllers');
 const bodyParser = require('body-parser');
 const postTweets = require('./postTweets.js');
-
+const watson = require('watson-developer-cloud');
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));
