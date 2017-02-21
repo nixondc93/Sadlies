@@ -25,6 +25,7 @@
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.3",
     "request": "^2.79.0",
+    "twit": "^2.2.5",
     "watson-developer-cloud": "^2.21.1"
   }
 }
