@@ -1,5 +1,3 @@
-const RapidAPI = new require('rapidapi-connect');
-const rapid = new RapidAPI('sadlies', 'ef1616b5-c1b4-479f-9367-7f5114aabb57');
 const express = require('express');
 const app = express();
 const db = require('./models');
