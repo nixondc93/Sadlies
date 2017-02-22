@@ -7,4 +7,3 @@ db.Tweet.remove({}, function(err, response) {
     return console.log('Success!', SuccessClbk.length , ' tweets were created.');
   })
 })
-  

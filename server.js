@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const db = require('./models');
-const controllers = require('./controllers');
 const bodyParser = require('body-parser');
+const Fs = require('file-system');
+const controllers = require('./controllers');
 const postTweets = require('./postTweets.js');
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
@@ -27,7 +28,7 @@ let params = {
 personality_insights.profile(params, function(err, response) {
   if(err){ console.log('The Error:', JSON.stringify(err)); return;}
     console.log('Success!');
-    return console.log(JSON.stringify(response));
+    return Fs.writeFile('./watson_analysis.json', JSON.stringify(response), 'utf8');
   });
 
 /* SERVING STATIC FILES */
