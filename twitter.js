@@ -20,17 +20,17 @@ const Interval = setInterval(() => {
     count: 200,
     max_id: start
   }, function (err, data, response) {
-
     if (err) {
       console.log("Error fectching tweets");
     }
     if (data[0] === undefined) {
       console.log('inside if statement')
       Fs.writeFile('./trumpTweets.js', JSON.stringify(tweets), 'utf8');
-      clearInterval(Interval);
+      return clearInterval(Interval);
+      
     }
     tweetCount += data.length;
     tweets = tweets.concat(data);
     console.log("Number of tweets: ", tweetCount);
   });
-}, 2000);
+}, 1000);
