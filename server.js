@@ -8,6 +8,7 @@ const postTweets = require('./postTweets.js');
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
 /* WATSON API */
+const Interval = setInterval(() => {
 let personality_insights = new PersonalityInsightsV3({
   "url": 'https://gateway.watsonplatform.net/personality-insights/api',
   "username": '6cf44ed0-b68d-4867-9def-84b2cf03b2c4',
@@ -30,6 +31,7 @@ personality_insights.profile(params, function(err, response) {
     console.log('Success!');
     return Fs.writeFile('./watson_analysis.json', JSON.stringify(response), 'utf8');
   });
+}, 8.64e+7);
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));
