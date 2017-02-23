@@ -4,7 +4,6 @@ const Fs = require('file-system');
 const express = require('express');
 const watson = require('./for_watson');
 const app = express();
-const db = require('./models');
 
 const Interval = setInterval(() => {
 let personality_insights = new PersonalityInsightsV3({
