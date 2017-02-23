@@ -1,6 +1,6 @@
 const Twit = require('twit');
 const Fs = require('file-system');
-const Tweets = require('./trumpTweets');
+
 
 const T = new Twit({
   consumer_key: 'N1bCISbBQDYHfohkAfNBKqStY',
@@ -25,9 +25,9 @@ const Interval = setInterval(() => {
     }
     if (data[0] === undefined) {
       console.log('inside if statement')
-      Fs.writeFile('./trumpTweets.js', JSON.stringify(tweets), 'utf8');
+      // Fs.writeFile('./trumpTweets.js', JSON.stringify(tweets), 'utf8');
       return clearInterval(Interval);
-      
+
     }
     tweetCount += data.length;
     tweets = tweets.concat(data);

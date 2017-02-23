@@ -8,9 +8,9 @@ const T = new Twit({
   app_only_auth: true
 });
 
-let tweets = [],
-  tweetCount = 0,
-  start;
+let tweets = [];
+let  tweetCount = 0;
+let  start;
 
 T.get('statuses/user_timeline', {
   screen_name: 'realDonaldTrump',
