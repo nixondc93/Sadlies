@@ -1,6 +1,5 @@
 const Twit = require('twit');
 const Fs = require('file-system');
-const Tweets = require('./trumpTweets');
 const request = require('request');
 
 

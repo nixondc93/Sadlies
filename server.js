@@ -9,25 +9,28 @@ const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insigh
 
 /* WATSON API */
 const Interval = setInterval(() => {
-let personality_insights = new PersonalityInsightsV3({
-  "url": 'https://gateway.watsonplatform.net/personality-insights/api',
-  "username": '6cf44ed0-b68d-4867-9def-84b2cf03b2c4',
-  "password": 'kHgqTmBVxmRG',
-  "version_date": '2016-10-19'
-});
+  let personality_insights = new PersonalityInsightsV3({
+    "url": 'https://gateway.watsonplatform.net/personality-insights/api',
+    "username": '6cf44ed0-b68d-4867-9def-84b2cf03b2c4',
+    "password": 'kHgqTmBVxmRG',
+    "version_date": '2016-10-19'
+  });
 
-let params = {
-  content_items: require('./string.json'),
-  consumption_preferences: true,
-  raw_scores: true,
-  headers: {
-    'accept-language': 'en',
-    "Content-Type": "text/plain;charset=utf-8"
-  }
-};
+  let params = {
+    content_items: require('./string.json'),
+    consumption_preferences: true,
+    raw_scores: true,
+    headers: {
+      'accept-language': 'en',
+      "Content-Type": "text/plain;charset=utf-8"
+    }
+  };
 
-personality_insights.profile(params, function(err, response) {
-  if(err){ console.log('The Error:', JSON.stringify(err)); return;}
+  personality_insights.profile(params, function (err, response) {
+    if (err) {
+      console.log('The Error:', JSON.stringify(err));
+      return;
+    }
     console.log('Success!');
     return Fs.writeFile('./watson_analysis.json', JSON.stringify(response), 'utf8');
   });
@@ -53,7 +56,7 @@ app.post('/api/sadlies', controllers.sadlies.create);
 app.get('/api/sadlies/nuke', controllers.sadlies.destroy);
 
 /* SERVER */
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Express server is running on port:3000');
   console.log('Press CTRL-C to stop\n');
 });
