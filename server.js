@@ -4,6 +4,7 @@ const db = require('./models');
 const bodyParser = require('body-parser');
 const Fs = require('file-system');
 const controllers = require('./controllers');
+const watsonAnalysis = require('./watson_api.js');
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));

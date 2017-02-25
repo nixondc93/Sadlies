@@ -5,6 +5,7 @@ const express = require('express');
 const watson = require('./for_watson');
 const app = express();
 
+
 const Interval = setInterval(() => {
 let personality_insights = new PersonalityInsightsV3({
   "url": 'https://gateway.watsonplatform.net/personality-insights/api',
@@ -19,7 +20,6 @@ let params = {
        {
          "language" : "en",
          "content" : watson.tweets,
-
          "contenttype" : "application/json"
        }
      ]
@@ -38,5 +38,6 @@ personality_insights.profile(params, function(err, response) {
     return Fs.writeFile('./watson_analysis.json', JSON.stringify(response), 'utf8');
   });
 }, 1000);
+
 
 // 2.592e+8 // <- milliseconds equivalent to 3 days of time, for watson analysis.
