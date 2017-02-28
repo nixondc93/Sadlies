@@ -43,6 +43,6 @@ const Interval = setInterval(() => {
     }
     tweetCount += data.length;
     tweets = tweets.concat(data);
-    console.log("Number of tweets: ", tweetCount);
+    console.log("Number ofopenince  tweets: ", tweetCount);
   });
 }, 1000);
