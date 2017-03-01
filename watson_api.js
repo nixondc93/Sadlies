@@ -17,7 +17,7 @@ let personality_insights = new PersonalityInsightsV3({
 db.Tweet.find({},function(err, tweetText){
   if(err){return console.log('There was an error!');}
   tweetText.forEach(function(el,index,tweetText){
-    tweets = tweets.concat(el.text) 
+    tweets = tweets.concat(el.text)
   });
 });
 
@@ -39,7 +39,6 @@ let params = {
   }
 };
 
-
 personality_insights.profile(params, function(err, response) {
   if(err){ console.log('The Error:', JSON.stringify(err)); return;}
     console.log('Success! Wastson personality analysis completed.');
@@ -47,5 +46,4 @@ personality_insights.profile(params, function(err, response) {
   });
 }, 1000);
 
-
-// 2.592e+8 // <- milliseconds equivalent to 3 days of time, for watson analysis.
+// 2.592e+8 // <- milliseconds equivalent to 3 days of time, for watson analysis. We can change this out after testing.

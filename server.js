@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const Fs = require('file-system');
 const controllers = require('./controllers');
 const watsonAnalysis = require('./watson_api.js');
+const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));
@@ -26,7 +27,7 @@ app.post('/api/sadlies', controllers.sadlies.create);
 app.get('/api/sadlies/nuke', controllers.sadlies.destroy);
 
 /* SERVER */
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Express server is running on port:3000');
   console.log('Press CTRL-C to stop\n');
 });
