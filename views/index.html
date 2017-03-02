@@ -16,26 +16,23 @@
 
   <head>
 
-    <body>
-      <div ng-controller="SadliesController as sadliesCrtl">
+<body>
+    <div ng-controller="SadliesController as sadliesCrtl">
         <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <h2>Sadlies</h2>
-              <div ng-repeat="lies in sadliesCrtl.sadlies">
-                <hr>
-                <h3>{{lies.created_at}}</h3>
-                <h3> Tweets -> {{lies.text}}</b>
-                </h3>
-              </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>Sadlies</h2>
+                    <div ng-repeat="lies in sadliesCrtl.sadlies">
+                        <hr>
+                        <h3>{{lies.created_at}}</h3>
+                        <h3> Tweets -> {{lies.text}}</b></h3>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                  <h2>Personality Insights</h2>
+                </div>
             </div>
-            <div class="col-md-5">
-              <h2>Personality Insights</h2>
-            </div>
-          </div>
         </div>
-      </div>
-      </div>
-    </body>
-
+    </div>
+</body>
 </html>

@@ -3,7 +3,7 @@ const db = require('../models');
 function index(req, response){
   db.Tweet.find({},function(err, tweets){
     if(err) { console.log('There was an error finding tweets.', err); }
-      console.log('Success from index fn ->', tweets);
+      console.log('index fn ->', tweets.length ,'tweets');
       return response.json(tweets)
   })
 }

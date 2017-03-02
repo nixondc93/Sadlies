@@ -17,7 +17,10 @@ let personality_insights = new PersonalityInsightsV3({
 db.Tweet.find({},function(err, tweetText){
   if(err){return console.log('There was an error!');}
   tweetText.forEach(function(el,index,tweetText){
-    tweets = tweets.concat(el.text)
+    if(index < 2000){
+      return tweets = tweets.concat(el.text);
+    };
+    return
   });
 });
 

@@ -4,7 +4,7 @@ const db = require('./models');
 const bodyParser = require('body-parser');
 const Fs = require('file-system');
 const controllers = require('./controllers');
-const watsonAnalysis = require('./watson_api.js');
+// const watsonAnalysis = require('./watson_api.js');
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
 /* SERVING STATIC FILES */
