@@ -4,37 +4,8 @@ const db = require('./models');
 const bodyParser = require('body-parser');
 const Fs = require('file-system');
 const controllers = require('./controllers');
-const postTweets = require('./postTweets.js');
+// const watsonAnalysis = require('./watson_api.js');
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
-
-/* WATSON API */
-const Interval = setInterval(() => {
-  let personality_insights = new PersonalityInsightsV3({
-    "url": 'https://gateway.watsonplatform.net/personality-insights/api',
-    "username": '6cf44ed0-b68d-4867-9def-84b2cf03b2c4',
-    "password": 'kHgqTmBVxmRG',
-    "version_date": '2016-10-19'
-  });
-
-  let params = {
-    content_items: require('./string.json'),
-    consumption_preferences: true,
-    raw_scores: true,
-    headers: {
-      'accept-language': 'en',
-      "Content-Type": "text/plain;charset=utf-8"
-    }
-  };
-
-  personality_insights.profile(params, function (err, response) {
-    if (err) {
-      console.log('The Error:', JSON.stringify(err));
-      return;
-    }
-    console.log('Success!');
-    return Fs.writeFile('./watson_analysis.json', JSON.stringify(response), 'utf8');
-  });
-}, 8.64e+7);
 
 /* SERVING STATIC FILES */
 app.use(express.static('public'));

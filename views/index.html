@@ -17,27 +17,26 @@
 
   <head>
 
-    <body>
-      <div class="canvas">
-      </div>
-      <div ng-controller="SadliesController as sadliesCrtl">
+
+<body>
+    <div ng-controller="SadliesController as sadliesCrtl">
         <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <h2>Sadlies</h2>
-              <!--<a class="twitter-timeline" data-lang="en" href="https://twitter.com/realDonaldTrump">Tweets by realDonaldTrump</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-              <div ng-repeat="lies in sadliesCrtl.sadlies">
-                <hr>
-                <h3>{{lies.created_at}}</h3>
-                <h3> Tweets -> {{lies.text}}</b>
-                </h3>
-              </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>Sadlies</h2>
+                    <div ng-repeat="lies in sadliesCrtl.sadlies">
+                        <hr>
+                        <h3>{{lies.created_at}}</h3>
+                        <h3> Tweets -> {{lies.text}}</b></h3>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                  <h2>Personality Insights</h2>
+                </div>
+
             </div>
-            <div class="col-md-5">
-              <h2>Personality Insights</h2>
-            </div>
-          </div>
         </div>
+
       </div>
       </div>
       <script>
@@ -47,3 +46,4 @@
     </body>
 
 </html>
+

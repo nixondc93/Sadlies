@@ -8,9 +8,9 @@ const T = new Twit({
   app_only_auth: true
 });
 
-let tweets = [],
-  tweetCount = 0,
-  start;
+let tweets = [];
+let  tweetCount = 0;
+let  start;
 
 T.get('statuses/user_timeline', {
   screen_name: 'realDonaldTrump',
@@ -33,18 +33,16 @@ const Interval = setInterval(() => {
       console.log("Error fectching tweets");
     }
     if (data[0] === undefined) {
-      db.Tweet.remove({}, function (err, response) {
-        db.Tweet.create(tweets, function (err, SuccessClbk) {
-          if (err) {
-            console.log('There was an error -> ', err);
-          }
-          console.log('Success!', SuccessClbk.length, ' tweets were created.');
+      db.Tweet.remove({}, function(err, response) {
+        db.Tweet.create(tweets, function(err, successClbk ) {
+          if(err){ console.log('There was an error -> ', err); }
+          return console.log('Success!', successClbk.length , ' tweets were created.');
         });
       });
       clearInterval(Interval);
     }
     tweetCount += data.length;
     tweets = tweets.concat(data);
-    console.log("Number of tweets: ", tweetCount);
+    console.log("Number ofopenince  tweets: ", tweetCount);
   });
 }, 1000);
