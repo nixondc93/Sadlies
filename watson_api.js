@@ -20,7 +20,6 @@ db.Tweet.find({},function(err, tweetText){
     if(index < 2000){
       return tweets = tweets.concat(el.text);
     };
-    return
   });
 });
 
