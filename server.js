@@ -25,6 +25,7 @@ app.get('/', function homepage(req, response) {
 app.get('/api/sadlies', controllers.sadlies.index);
 app.post('/api/sadlies', controllers.sadlies.create);
 app.get('/api/sadlies/nuke', controllers.sadlies.destroy);
+app.get('/api/sadlies/watson', controllers.watson.watsonIndex);
 
 /* SERVER */
 app.listen(process.env.PORT || 3000, function () {
