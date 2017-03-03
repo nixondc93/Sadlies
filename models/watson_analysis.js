@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 
 let WatsonAnalysis = new Schema ({
   word_count: Number,
-  name: String
+  name: String,
   personality: [{
     trait_id: String,
     category: String,
@@ -27,9 +27,9 @@ let WatsonAnalysis = new Schema ({
     consumption_preference_category_id: String,
     name: String,
     consumption_preferences: [{
-        consumption_preference_id: String,
-        name: String,
-        score: Number
+      consumption_preference_id: String,
+      name: String,
+      score: Number
     }],
   }]
 });

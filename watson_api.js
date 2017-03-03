@@ -42,9 +42,15 @@ let params = {
 };
 
 personality_insights.profile(params, function(err, response) {
-  if(err){ console.log('The Error:', JSON.stringify(err)); return;}
-    console.log('Success! Wastson personality analysis completed.');
-    return Fs.writeFile('./watson_analysis.json', JSON.stringify(response), 'utf8');
+  console.time('timer');
+  if(err){ console.log('The Error:', JSON.stringify(err));}
+  db.Watson.remove({}, function(err, response){
+    db.Watson.create(response,function(err, watsonClbk){
+      if(err){ console.log('there was an error');}
+        console.timeEnd('timer');
+        return console.log(watsonClbk)
+      })
+    });
   });
 }, 1000);
 
