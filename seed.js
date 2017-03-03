@@ -33,13 +33,15 @@ const Interval = setInterval(() => {
       console.log("Error fectching tweets");
     }
     if (data[0] === undefined) {
-      db.Tweet.remove({}, function(err, response) {
-        db.Tweet.create(tweets, function(err, SuccessClbk ) {
-          if(err){ console.log('There was an error -> ', err); }
-          return console.log('Success!', SuccessClbk.length , ' tweets were created.');
+      db.Tweet.remove({}, function (err, response) {
+        db.Tweet.create(tweets, function (err, SuccessClbk) {
+          if (err) {
+            console.log('There was an error -> ', err);
+          }
+          console.log('Success!', SuccessClbk.length, ' tweets were created.');
         });
       });
-      return clearInterval(Interval);
+      clearInterval(Interval);
     }
     tweetCount += data.length;
     tweets = tweets.concat(data);
