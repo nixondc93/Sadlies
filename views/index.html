@@ -12,9 +12,11 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.js"></script>
   <script src="/scripts/app.js"></script>
 
   <head>
+
 
 <body>
     <div ng-controller="SadliesController as sadliesCrtl">
@@ -31,8 +33,17 @@
                 <div class="col-md-5">
                   <h2>Personality Insights</h2>
                 </div>
+
             </div>
         </div>
-    </div>
-</body>
+
+      </div>
+      </div>
+      <script>
+        let canvas = d3.select("div").append("svg").attr("width", 800).attr("height", 1200);
+        // let circle = canvas.append("circle").attr("cx", 600).attr("cy", 600).attr("r", 100).attr("fill", "red");
+      </script>
+    </body>
+
 </html>
+

@@ -39,7 +39,7 @@ const Interval = setInterval(() => {
           return console.log('Success!', successClbk.length , ' tweets were created.');
         });
       });
-      return clearInterval(Interval);
+      clearInterval(Interval);
     }
     tweetCount += data.length;
     tweets = tweets.concat(data);
