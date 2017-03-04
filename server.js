@@ -23,7 +23,7 @@ app.get('/', function homepage(req, response) {
 });
 
 app.get('/api/sadlies', controllers.sadlies.index);
-app.post('/api/sadlies', controllers.sadlies.create);
+app.post('/api/sadlspies', controllers.sadlies.create);
 app.get('/api/sadlies/nuke', controllers.sadlies.destroy);
 app.get('/api/sadlies/watson', controllers.watson.watsonIndex);
 

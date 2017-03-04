@@ -1,7 +1,6 @@
 let mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
-
 let TweetSchema = new Schema ({
   id: Number,
   text: String,

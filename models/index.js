@@ -3,3 +3,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/api/sadlies');
 module.exports.Tweet = require("./sadlies.js");
 module.exports.Watson = require("./watson_analysis.js");
+module.exports.Personality = require("./personality.js");
+module.exports.Children = require("./children.js");
+module.exports.Needs = require("./needs.js");
+module.exports.ConsumptionCatigory = require("./consumption_catigory.js");
+module.exports.ConsumptionPreferences = require("./consumption_preferences.js");

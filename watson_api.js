@@ -44,13 +44,11 @@ let params = {
 personality_insights.profile(params, function(err, response) {
   console.time('timer');
   if(err){ console.log('The Error:', JSON.stringify(err));}
-  db.Watson.remove({}, function(err, response){
-    db.Watson.create(response,function(err, watsonClbk){
-      if(err){ console.log('there was an error');}
-        console.timeEnd('timer');
-        return console.log(watsonClbk)
-      })
-    });
+  db.Watson.create(response,function(err, watsonClbk){
+    if(err){ console.log('there was an error');}
+      console.timeEnd('timer');
+      return console.log(watsonClbk)
+    })
   });
 }, 1000);
 
