@@ -1,4 +1,5 @@
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
+const TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
 const express = require('express');
 const app = express();
 const Twit = require('twit');
@@ -46,3 +47,20 @@ db.Tweet.find({},function(err, tweetText){
     })
 });
 }, 6.912e+8);
+
+
+// let text_to_speech = new TextToSpeechV1({
+//   username: '{username}',
+//   password: '{password}'
+// });
+//
+// let params = {
+//   voice: 'en-US_AllisonVoice'
+// };
+//
+// text_to_speech.voice(params, function(error, voice) {
+//   if (error)
+//     console.log('Error:', error);
+//   else
+//     console.log(JSON.stringify(voice, null, 2));
+// });
