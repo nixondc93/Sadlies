@@ -4,7 +4,7 @@ const db = require('./models');
 const bodyParser = require('body-parser');
 const Fs = require('file-system');
 const controllers = require('./controllers');
-// const watsonAnalysis = require('./watson_api.js');
+const watsonAnalysis = require('./watson_api.js');
 const PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
 /* SERVING STATIC FILES */
@@ -28,7 +28,7 @@ app.get('/api/sadlies/nuke', controllers.sadlies.destroy);
 app.get('/api/sadlies/watson', controllers.watson.watsonIndex);
 
 /* SERVER */
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3000, function(){
   console.log('Express server is running on port:3000');
   console.log('Press CTRL-C to stop\n');
 });

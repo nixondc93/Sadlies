@@ -4,7 +4,7 @@ const app = express();
 const Twit = require('twit');
 const Fs = require('file-system');
 const db = require('./models');
-let tweets = "";
+
 
 const Interval = setInterval(() => {
 let personality_insights = new PersonalityInsightsV3({
@@ -14,21 +14,12 @@ let personality_insights = new PersonalityInsightsV3({
   "version_date": '2016-10-19'
 });
 
-db.Tweet.find({},function(err, tweetText){
-  if(err){return console.log('There was an error!');}
-  tweetText.forEach(function(el,index,tweetText){
-    if(index < 2000){
-      return tweets = tweets.concat(el.text);
-    };
-  });
-});
-
 let params = {
   content_items: [{
        "contentItems"  : [
        {
          "language" : "en",
-         "content" : tweets,
+         "content" : '',
          "contenttype" : "application/json"
        }
      ]
@@ -41,15 +32,17 @@ let params = {
   }
 };
 
-personality_insights.profile(params, function(err, response) {
-  console.time('timer');
-  if(err){ console.log('The Error:', JSON.stringify(err));}
-  db.Watson.create(response,function(err, watsonClbk){
-    if(err){ console.log('there was an error');}
-      console.timeEnd('timer');
-      return console.log(watsonClbk)
+db.Tweet.find({},function(err, tweetText){
+  let watsonContent;
+  if(err){return console.log('There was an error!');}
+  tweetText.forEach(function(el,index,tweetText){
+    params.content_items[0].contentItems[0]["content"] += el.text;
+  })
+    personality_insights.profile(params, function(err, response){
+      if(err){ console.log('The Error:', JSON.stringify(err));}
+      db.Watson.create(response,function(err, watsonClbk){
+        if(err){ console.log('there was an error');}
+      })
     })
-  });
-}, 1000);
-
-// 2.592e+8 // <- milliseconds equivalent to 3 days of time, for watson analysis. We can change this out after testing.
+});
+}, 6.912e+8);

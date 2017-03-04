@@ -7,6 +7,7 @@ let ConsumptionCatigory = require('./consumption_catigory.js');
 let WatsonAnalysis = new Schema ({
   word_count: Number,
   name: String,
+  createdAt: {type: Date, default: Date.now},
   personality: [Personality.schema],
   needs: [Needs.schema],
   consumption_preferences: [ConsumptionCatigory.schema]
