@@ -33,8 +33,8 @@ const Interval = setInterval(() => {
       console.log("Error fectching tweets");
     }
     if (data[0] === undefined) {
-      db.Tweet.remove({}, function(err, response) {
-        db.Tweet.create(tweets, function(err, successClbk ) {
+      db.Tweet.remove({}, (err, response) => {
+        db.Tweet.create(tweets, (err, successClbk ) => {
           if(err){ console.log('There was an error -> ', err); }
           return console.log('Success!', successClbk.length , ' tweets were created.');
         });

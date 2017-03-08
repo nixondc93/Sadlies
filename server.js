@@ -28,7 +28,7 @@ app.get('/api/sadlies/nuke', controllers.sadlies.destroy);
 app.get('/api/sadlies/watson', controllers.watson.watsonIndex);
 
 /* SERVER */
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, () => {
   console.log('Express server is running on port:3000');
   console.log('Press CTRL-C to stop\n');
 });
